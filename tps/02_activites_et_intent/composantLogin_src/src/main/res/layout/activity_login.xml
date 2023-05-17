@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+
+        <TableRow>
+            <TextView
+                android:text="User Name: "
+                android:id="@+id/lblUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <EditText
+                android:text=""
+                android:id="@+id/txtUsername"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            </EditText>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Password: "
+                android:id="@+id/lblPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <EditText
+                android:text=""
+                android:id="@+id/txtPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword">
+            </EditText>
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onCancel"
+                android:text="Cancel"></Button>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onLogin"
+                android:text="@string/login"></Button>
+        </TableRow>
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>

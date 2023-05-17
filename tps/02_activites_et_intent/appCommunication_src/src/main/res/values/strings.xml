@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TP02__AppCommunication</string>
+    <string name="seuilBatterie">Seuil Mini Batterie</string>
+</resources>

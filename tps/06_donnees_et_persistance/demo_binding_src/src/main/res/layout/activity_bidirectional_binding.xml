@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="edu.cai.demo_binding2.BidirectionalBindingActivity">
+
+    <data class="ClasseDeBindingBidirectionelGeneree">
+        <variable name="personne" type="edu.cai.demo_binding2.bindable.PersonneObservable" />
+    </data>
+
+    <TableLayout
+        android:layout_width="304dp"
+        android:layout_height="437dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/lblNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nom:"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/txtNomBid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@={personne.nom}"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/lblPrenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prénom:"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/txtPrenom"
+                android:layout_width="244dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@={personne.prenom}"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/lblNomPrenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{personne.prenom + ' ' + personne.nom}"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_column="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+</layout>

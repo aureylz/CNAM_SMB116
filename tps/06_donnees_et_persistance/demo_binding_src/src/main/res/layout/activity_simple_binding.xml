@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ClasseDeBindingGeneree">
+        <import type="java.util.List" />
+        <import type="edu.cai.demo_binding2.bindable.Personne" />
+        <variable name="listener" type="edu.cai.demo_binding2.MonListener" />
+        <variable name="personne" type="Personne" />
+        <variable name="listePersonnes" type="List&lt;Personne&gt;" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="horizontal|vertical"
+        android:showDividers="beginning|middle|end"
+        tools:context="edu.cai.demo_binding2.SimpleBindingActivity">
+
+        <TextView
+            android:id="@+id/txtNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{personne.nom}"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:onClick="@{listener::clickSurTexte}"
+
+            />
+
+        <TextView
+            android:id="@+id/txtPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{personne.prenom}"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtevalListe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{listePersonnes.get(0).nom + listePersonnes.size}"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnChgNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onBtnChgNomPersonne"
+            android:text="Changer Props Personne" />
+
+    </LinearLayout>
+</layout>
